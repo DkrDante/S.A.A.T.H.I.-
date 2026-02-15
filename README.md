@@ -11,6 +11,7 @@ S.A.A.T.H.I is an emotionally intelligent, privacy-focused AI tutor designed to 
 S.A.A.T.H.I (Smart Adaptive AI Tutor for Holistic Intelligence) represents the evolution of AI-assisted learning. It's not just a tutoring system—it's a companion that understands your learning style, emotional state, and educational needs, adapting in real-time to provide personalized guidance.
 
 ### Core Philosophy
+
 - **Holistic Intelligence**: Nurtures cognitive, emotional, and social development
 - **Adaptive Learning**: Adjusts teaching methods based on individual learning patterns
 - **Emotional Awareness**: Recognizes and responds to learner's emotional state
@@ -19,6 +20,7 @@ S.A.A.T.H.I (Smart Adaptive AI Tutor for Holistic Intelligence) represents the e
 ## ✨ Key Features
 
 ### Educational Capabilities
+
 - **Adaptive Tutoring**: Personalized learning paths based on performance and comprehension
 - **Multi-Subject Support**: Mathematics, Science, Languages, and more
 - **Real-Time Assessment**: Continuous evaluation of understanding and progress
@@ -26,12 +28,14 @@ S.A.A.T.H.I (Smart Adaptive AI Tutor for Holistic Intelligence) represents the e
 - **Homework Assistance**: Guided problem-solving without giving direct answers
 
 ### Emotional Intelligence
+
 - **Mood-Aware Teaching**: Adjusts teaching style based on learner's emotional state
 - **Encouragement System**: Provides motivation and positive reinforcement
 - **Frustration Detection**: Recognizes when learner is struggling and adapts approach
 - **Celebration of Progress**: Acknowledges achievements and milestones
 
 ### Technical Features
+
 - **100% Local & Private**: All processing (STT, LLM, TTS) happens on-device
 - **Vision-Enabled**: Uses camera to detect engagement and emotional state
 - **Voice Interaction**: Natural conversation-based learning
@@ -39,121 +43,30 @@ S.A.A.T.H.I (Smart Adaptive AI Tutor for Holistic Intelligence) represents the e
 - **Web-Aware**: Fetches real-time information for current topics and research
 
 ### Memory & Personalization
+
 - **Learning Profile**: Tracks strengths, weaknesses, and learning style
 - **Progress Tracking**: Maintains detailed history of topics covered and mastery levels
 - **Relationship Building**: Develops understanding of learner's interests and goals
 - **Contextual Recall**: References previous lessons and builds on prior knowledge
 
-## 🛠️ Installation
-
-### Prerequisites
-- **Hardware**: Apple Silicon (M1/M2/M3/M4) recommended for MLX acceleration
-- **OS**: macOS 12.0+
-- **System Tools**: ffmpeg and portaudio required
-- **Python**: 3.9 or higher
-
-### 1. System Dependencies
-```bash
-brew install ffmpeg portaudio
-```
-
-### 2. Clone & Setup
-```bash
-git clone https://github.com/yourusername/saathi.git
-cd saathi
-
-# Create Virtual Environment
-python3 -m venv venv
-source venv/bin/activate
-
-# Install Dependencies
-pip install -r requirements.txt
-```
-
-### 3. Model Weights
-Place the following model files in the root directory:
-- `kokoro-v0_19.onnx` (TTS Model)
-- `voices.bin` (TTS Voices)
-- `Okay-Nomi_en_mac_v4_0_0.ppn` (Porcupine Wake Word file)
-- `yolov8n-o365.pt` (Vision Model)
-
-### 4. Configuration
-Create a `.env` file in the root directory:
-```bash
-PICOVOICE_KEY=your_actual_access_key_here
-```
-
-### 5. Face Registration (Optional)
-Register learners for personalized experience:
-```bash
-python face_register.py
-```
-
-## 🚀 Usage
-
-### Start S.A.A.T.H.I
-```bash
-./run_nomi.sh
-```
-
-### Manual Controls
-
-#### Memory Consolidation
-Process learning sessions into long-term memory:
-```bash
-python dream.py
-```
-
-#### Main Tutoring Session
-Start the interactive learning session:
-```bash
-python main.py
-```
-
-## 📂 Project Structure
-
-```
-saathi/
-├── main.py                 # Main conversation and learning loop
-├── dream.py                # Long-term memory consolidation
-├── face_register.py        # Learner registration system
-├── run_nomi.sh             # Startup script
-├── memory.json             # Structured learner profiles & facts
-├── memory_summary.txt      # Long-term learning narrative
-├── nomi_users_db.pkl       # Face recognition database
-├── logs/                   # Session logs
-│   ├── current_log.txt     # Active session
-│   └── dreamed/            # Archived sessions
-├── modules/
-│   ├── brain.py            # LLM Logic (Llama 3.2)
-│   ├── ears.py             # Speech-to-Text (Whisper)
-│   ├── voice.py            # Text-to-Speech (Kokoro)
-│   ├── memory.py           # Memory Management
-│   ├── sentry.py           # Wake Word Detection
-│   ├── observer.py         # Engagement Monitoring
-│   ├── tracking.py         # Vision & Face Recognition
-│   ├── logger.py           # System Logging
-│   └── web.py              # Web Search Integration
-├── assets/
-│   └── sounds/             # Audio feedback files
-└── requirements.txt
-```
-
 ## 🎯 Use Cases
 
 ### For Students
+
 - **Homework Help**: Get guided assistance without direct answers
 - **Concept Clarification**: Ask questions and receive personalized explanations
 - **Exam Preparation**: Practice problems with adaptive difficulty
 - **Learning Companion**: Build confidence through supportive interaction
 
 ### For Self-Learners
+
 - **Skill Development**: Learn new subjects at your own pace
 - **Knowledge Retention**: Benefit from spaced repetition and review
 - **Curiosity Exploration**: Dive deep into topics of interest
 - **Progress Tracking**: Monitor your learning journey
 
 ### For Educators
+
 - **Supplementary Tool**: Provide students with additional support
 - **Personalized Learning**: Address individual student needs
 - **Progress Monitoring**: Track student engagement and understanding
@@ -162,18 +75,21 @@ saathi/
 ## 🛡️ Privacy & Security
 
 ### Data Privacy
+
 - **Strictly Local**: All processing happens on your device
 - **No Cloud Dependency**: No data transmitted to external servers
 - **Encrypted Storage**: Local data stored securely
 - **User Control**: Full control over data retention and deletion
 
 ### What Gets Stored
+
 - Conversation logs (local text files)
 - Learning progress and profiles
 - Face recognition data (if registered)
 - Session history and analytics
 
 ### What Never Leaves Your Device
+
 - Voice recordings
 - Video/camera feed
 - Personal information
@@ -182,16 +98,21 @@ saathi/
 ## 🔧 Configuration
 
 ### Persona Customization
+
 Edit the `PERSONA` variable in `main.py` to customize teaching style and personality.
 
 ### Vision Settings
+
 Adjust vision system parameters in `modules/tracking.py`:
+
 - Face detection sensitivity
 - Emotion recognition thresholds
 - Object detection preferences
 
 ### Memory Settings
+
 Configure memory behavior in `modules/memory.py`:
+
 - Retention policies
 - Consolidation frequency
 - Context window size
@@ -199,6 +120,7 @@ Configure memory behavior in `modules/memory.py`:
 ## 📊 Learning Analytics
 
 S.A.A.T.H.I tracks:
+
 - Session duration and frequency
 - Topics covered and mastery levels
 - Emotional engagement patterns
@@ -210,6 +132,7 @@ Access analytics through the memory system or logs directory.
 ## 🤝 Contributing
 
 We welcome contributions! Areas of interest:
+
 - Additional subject matter modules
 - Enhanced assessment algorithms
 - Improved emotion recognition
@@ -221,18 +144,21 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 ## 🗺️ Roadmap
 
 ### Phase 1 (Current)
+
 - ✅ Core tutoring functionality
 - ✅ Emotion-aware interaction
 - ✅ Vision-based engagement tracking
 - ✅ Multi-user support
 
 ### Phase 2 (Planned)
+
 - 📝 Structured curriculum support
 - 📝 Assessment and quiz generation
 - 📝 Progress dashboards
 - 📝 Parent/teacher reporting
 
 ### Phase 3 (Future)
+
 - 🔮 Multi-modal learning (visual aids, diagrams)
 - 🔮 Collaborative learning sessions
 - 🔮 Integration with educational platforms
@@ -269,4 +195,3 @@ Built on the foundation of Nomi V2, combining emotional intelligence with educat
 ---
 
 **S.A.A.T.H.I**: Where technology meets empathy in education.
-
